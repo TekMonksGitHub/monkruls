@@ -14,22 +14,16 @@ The Monkruls business rules engine.
 
 * Install PapaParse for CSV parsing.  This must be a local install. Don't use --global on Windows.
 ```
-#!Javascript
-
 npm install papaparse
 ```
 
 * Install Mustache.  This must be a local install. Don't use --global on Windows.
 ```
-#!Javascript
-
 npm install mustache
 ```
 
 * Run from command line using this command. This runs the tool in a one worker cluster. Don't add more workers. 
 ```
-#!batch
-
 monkruls.bat 
 ```
 
@@ -38,7 +32,3 @@ monkruls.bat
 
 * Clean coding please
 * Remember node.js MUST be asynchronous - no "sync" methods, ever!
-
-### Who do I talk to? ###
-
-* Rohit, rvkapoor@tekmonks.com
