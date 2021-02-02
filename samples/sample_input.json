@@ -1,0 +1,22 @@
+{
+    "objects": [{"object":"{{{current_folder}}}/student.csv"}],
+    
+    "data": [
+        {"course_categories":"{{{current_folder}}}/course_categories.csv"},
+        {"course_mcs":"{{{current_folder}}}/course_mcs.lookup_table.csv"}
+    ],
+
+    "rule_bundles": [
+		"{{{current_folder}}}/nus.ge5.ruls.json", 
+        "{{{current_folder}}}/nus.csf.ruls.json",
+        "{{{current_folder}}}/nus.csbd.ruls.json",
+        "{{{current_folder}}}/nus.itp_ms.ruls.json",
+        "{{{current_folder}}}/nus.ue.ruls.json"
+    ],
+    
+    "outputs": [{"object":"{{{current_folder}}}/output.csv"}],
+
+    "rule_parameters": {
+        "CS4000_COURSE_PATTERN": "CS4..."
+    }
+}

@@ -1,0 +1,39 @@
+[
+    {
+        "condition": "intersect_size(object.courses_taken, course_categories.ger)",
+        "do": "object.counts_ger = 1",
+        "else_do": "object.counts_ger = 0"
+    },
+    {
+        "condition": "intersect_size(object.courses_taken, course_categories.get)",
+        "do": ["object.counts_get = 1"],
+        "else_do": "object.counts_get = 0"
+    },
+    {
+        "condition": "intersect_size(object.courses_taken, course_categories.geh)",
+        "do": "object.counts_geh = 1",
+        "else_do": "object.counts_geh = 0"
+    },
+    {
+        "condition": "intersect_size(object.courses_taken, course_categories.ges)",
+        "do": "object.counts_ges = 1", 
+        "else_do": "object.counts_ges = 0"
+    },
+    {
+        "condition": "intersect_size(object.courses_taken, course_categories.geq)",
+        "do": "object.counts_geq = 1", 
+        "else_do": "object.counts_geq = 0"
+    },
+    {
+        "condition": "object.counts_ger+object.counts_get+object.counts_geh+object.counts_ges+object.counts_geq >= 4",
+        "do": "object.meets_ge5_1 = 1"
+    },
+    {
+        "condition": "object_sum(course_mcs,intersect(object.courses_taken, union(course_categories.ger, course_categories.get, course_categories.geh, course_categories.ges, course_categories.geq))) >= 20",
+        "do": "object.meets_ge5_2 = 1"
+    },
+    {
+        "condition": "object.meets_ge5_1 && object.meets_ge5_2",
+        "do": "object.meets_ge5 = 1"
+    }
+]

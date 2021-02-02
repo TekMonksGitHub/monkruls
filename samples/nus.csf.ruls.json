@@ -1,0 +1,11 @@
+[
+    {
+        "condition": "object_sum(course_mcs,intersect(object.courses_taken, course_categories.csf))>=36",
+        "do": "object.meets_csf = 1",
+        "else_do": "object.meets_csf = 0"
+    },
+	{
+		"condition": "object.courses_taken.includes('CS1101S')",
+        "do": "object.carry_over_for_uem = 1"
+	}
+]

@@ -1,0 +1,43 @@
+[
+	{
+		"condition": "object.courses_taken.includes('CS3219')",
+        "do": "object.meets_csbd_1 = 1"
+    },
+    {
+		"condition": "(object.courses_taken.includes('CS3216') && object.courses_taken.includes('CS3217')) || (object.courses_taken.includes('CS3281') && object.courses_taken.includes('CS3282'))",
+        "do": "object.meets_csbd_2 = 1"
+    },
+    {
+        "condition": "count(match_pattern(intersect(object.courses_taken, course_categories.csfnw), '{{{CS4000_COURSE_PATTERN}}}')) >= 3",
+        "do": "object.meets_csfnw = 1"
+    },
+    {
+        "condition": "count(match_pattern(intersect(object.courses_taken, course_categories.csfdb), '{{{CS4000_COURSE_PATTERN}}}')) >= 3",
+        "do": "object.meets_csfdb = 1"
+    },
+    {
+        "condition": "count(match_pattern(intersect(object.courses_taken, course_categories.csfsec), '{{{CS4000_COURSE_PATTERN}}}')) >= 3",
+        "do": "object.meets_csfsec = 1"
+    },
+    {
+        "condition": "object.meets_csfnw || object.meets_csfdb || object.meets_csfsec",
+        "do": "object.meets_csffa_1 = 1"
+    },
+    {
+        "condition": "object_sum(course_mcs, intersect(object.courses_taken, union(course_categories.csfnw, course_categories.csfdb, course_categories.csfsec))) >= 24",
+        "do": "object.meets_csffa_2 = 1"
+    },
+    {
+		"condition": "object.meets_csffa_1 && object.meets_csffa_2",
+        "do": "object.meets_csbd_3 = 1"
+    },
+    {
+		"condition": "object.courses_taken.includes('CP4101') || object.courses_taken.includes('TR3202') || object.courses_taken.includes('CSIEXP')",
+        "do": "object.meets_csbd_4 = 1"
+    },
+    {
+        "condition": "object.meets_csbd_1 && object.meets_csbd_2 && object.meets_csbd_3 && object.meets_csbd_4",
+        "do": "object.meets_csbd = 1",
+        "else_do": "object.meets_csbd = 0"
+    }
+]

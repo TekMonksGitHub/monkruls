@@ -1,0 +1,6 @@
+[
+	{
+		"condition": "object_sum(course_mcs,intersect(object.courses_taken, course_categories.ue)) >= 28",
+        "do": "object.meets_ue = 1"
+    }
+]

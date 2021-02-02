@@ -1,0 +1,18 @@
+[
+	{
+		"condition": "intersect_size(object.courses_taken, course_categories.itp) == 3",
+        "do": "object.meets_itp = 1"
+    },
+    {
+		"condition": "intersect_size(object.courses_taken, course_categories.ms) >= 4",
+        "do": "object.meets_ms_1 = 1"
+    },
+    {
+		"condition": "intersect_size(object.courses_taken, course_categories.science) >= 1",
+        "do": "object.meets_ms_2 = 1"
+    },
+    {
+		"condition": "object.meets_ms_1 && object.meets_ms_2",
+        "do": "object.meets_ms = 1"
+    }
+]
