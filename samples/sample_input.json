@@ -7,7 +7,7 @@
     ],
 
     "rule_bundles": [
-		"{{{current_folder}}}/nus.ge5.ruls.json", 
+	"{{{current_folder}}}/nus.ge5.ruls.json", 
         "{{{current_folder}}}/nus.csf.ruls.json",
         "{{{current_folder}}}/nus.csbd.ruls.json",
         "{{{current_folder}}}/nus.itp_ms.ruls.json",
