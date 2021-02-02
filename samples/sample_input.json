@@ -14,7 +14,11 @@
         "{{{current_folder}}}/nus.ue.ruls.json"
     ],
     
-    "outputs": [{"object":"{{{current_folder}}}/output.csv"}],
+    "outputs": [
+        {"object":"{{{current_folder}}}/output.csv"},
+        {"$failed_reasons":"{{{current_folder}}}/failed_reasons.csv"},
+        {"$failed_rules":"{{{current_folder}}}/failed_rules.csv"}
+    ],
 
     "rule_parameters": {
         "CS4000_COURSE_PATTERN": "CS4..."

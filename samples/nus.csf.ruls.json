@@ -2,10 +2,12 @@
     {
         "condition": "object_sum(course_mcs,intersect(object.courses_taken, course_categories.csf)) >= 36",
         "do": "object.meets_csf = 1",
-        "else_do": "object.meets_csf = 0"
+        "else_do": "object.meets_csf = 0",
+        "reason": "Core computer science foundation courses requirements not met"
     },
 	{
 		"condition": "object.courses_taken.includes('CS1101S')",
-        "do": "object.carry_over_for_uem = 1"
+        "do": "object.carry_over_for_uem = 1",
+        "reason": "Carrying over 1 MC for meeting Unrestricted module requirements"
 	}
 ]

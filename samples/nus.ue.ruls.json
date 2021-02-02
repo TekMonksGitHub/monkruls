@@ -1,6 +1,7 @@
 [
 	{
-		"condition": "object_sum(course_mcs,intersect(object.courses_taken, course_categories.ue)) >= 28",
-        "do": "object.meets_ue = 1"
+		"condition": "sum([object_sum(course_mcs,intersect(object.courses_taken, course_categories.ue)), object.carry_over_for_uem]) >= 28",
+        "do": "object.meets_ue = 1",
+        "reason": "Unrestricted modules, MCs are less than 28"
     }
 ]

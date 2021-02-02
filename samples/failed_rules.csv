@@ -1,0 +1,4 @@
+condition,do,else_do,reason
+"intersect_size(object.courses_taken, course_categories.geq)",object.counts_geq = 1,object.counts_geq = 0,General Education requirements Quantitiave pillar not met
+"count(match_pattern(intersect(object.courses_taken, course_categories.csfnw), 'CS4...')) >= 3",object.meets_csfnw = 1,,"Meeting focus criteria with 3 modules at level 4000 or above is required, not found in Networks"
+"count(match_pattern(intersect(object.courses_taken, course_categories.csfsec), 'CS4...')) >= 3",object.meets_csfsec = 1,,"Meeting focus criteria with 3 modules at level 4000 or above is required, not found in Security"
