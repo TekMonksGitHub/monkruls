@@ -1,0 +1,7 @@
+[
+	{
+		"condition": "object.meets_ms && object.meets_csbd && object.meets_csf && object.meets_ge5 && object.meets_itp",
+        "do": "object.meets_grad = 1",
+        "reason": "One of the graduation conditions above was not met."
+    }
+]
