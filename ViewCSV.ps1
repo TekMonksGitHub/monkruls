@@ -1,0 +1,1 @@
+Import-Csv $args[0]|Out-GridView
