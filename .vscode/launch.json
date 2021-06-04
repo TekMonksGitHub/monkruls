@@ -7,11 +7,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Rules",
+            "name": "Run Monkruls",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\lib\\main.js",
+            "program": "${workspaceFolder}\\lib\\monkruls.js",
             "args": ["${workspaceFolder}\\samples\\sample_input.json"]
         }
     ]
