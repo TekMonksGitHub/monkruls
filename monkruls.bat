@@ -1,1 +1,1 @@
-@node "%~dp0\lib\main.js" %*
+@node "%~dp0\lib\monkruls.js" %*
