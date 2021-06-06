@@ -1,8 +1,8 @@
 [
     {
-		"condition": "object.degree != 'Fail'",
-        "do": "object.meets_gpa = 1",
-        "else_do": "object.meets_gpa = 0",
+		"condition": "Degree != 'Fail'",
+        "do": ["object.meets_gpa = 1","object.degree=Degree"],
+        "else_do": ["object.meets_gpa = 0","object.degree=Degree"],
         "reason": "Degree shows failed, most probably GPA issue."
     },
 	{
