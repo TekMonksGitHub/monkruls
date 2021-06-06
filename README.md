@@ -7,7 +7,7 @@ A powerful, but lightweight business rules engine.
 # Features #
 
 * Runs on fundamentals - rules, data, input object and output object definition.
-* Tree and flow based.
+* Decision tables, Tree and flow based.
 * Ability to provide reasoning for decisions.
 * Supports JSON, and CSV formats for all artifacts, for real world ease of use.
 * No programming language needed, ever! Objects can be defined via CSVs.
