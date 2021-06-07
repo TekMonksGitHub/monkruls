@@ -1,4 +1,6 @@
 {
+    "functions": ["{{{current_folder}}}/functions.js"],
+
     "objects": [{"object":"{{{current_folder}}}/student.csv"}, {"GPA":"valueOf(object.gpa[0])"}],
     
     "data": [
