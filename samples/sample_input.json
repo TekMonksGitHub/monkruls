@@ -25,6 +25,6 @@
     ],
 
     "rule_parameters": {
-        "CS4000_COURSE_PATTERN": "CS4..."
+        "CS4000_COURSE_PATTERN": {"value":"CS4..."}
     }
 }
