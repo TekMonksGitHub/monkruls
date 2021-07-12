@@ -14,7 +14,7 @@
         "{{{current_folder}}}/nus.csbd.ruls.json",
         "{{{current_folder}}}/nus.itp_ms.ruls.json",
         "{{{current_folder}}}/nus.ue.ruls.json",
-        "{{{current_folder}}}/nus.degree_classification.table.csv",
+        "{{{current_folder}}}/nus.degree_classification.decision_table.csv",
         "{{{current_folder}}}/nus.grad.ruls.json"
     ],
     
