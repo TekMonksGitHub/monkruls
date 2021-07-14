@@ -24,7 +24,7 @@
         {"$failed_rules":"{{{current_folder}}}/failed_rules.csv"}
     ],
 
-    "rule_parameters": {
-        "CS4000_COURSE_PATTERN": {"value":"CS4..."}
-    }
+    "rule_parameters": [
+        {"name": "CS4000_COURSE_PATTERN", "value":"CS4..."}
+    ]
 }
