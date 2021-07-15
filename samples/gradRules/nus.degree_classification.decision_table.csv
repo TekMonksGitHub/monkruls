@@ -1,7 +1,7 @@
 ﻿GPA,Degree
 >=4.50,Honours (Highest Distinction)
-"$>=4.00,<=4.49",Honours (Distinction)
-">=3.50,<=3.99",Honours (Merit)
-">=3,<=3.49",Honours
-">=2.00,<=2.99",Pass
+$>=4.00 && $<=4.49,Honours (Distinction)
+$>=3.50 && $<=3.99,Honours (Merit)
+$>=3 && $<=3.49,Honours
+$>=2.00 && $<=2.99,Pass
 <=1.99,Fail

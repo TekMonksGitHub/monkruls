@@ -1,0 +1,2 @@
+Name,AdmissionNum,Nationality,Qualification,CoreSubject,CoreSubjectGrade,H1Subjects,H1SubjectGrades,H2Subjects,H2SubjectGrades,H3Subjects,H3SubjectGrades,GradeType,Grade,Outcome
+Student A,48298492,China,A,AL00001,D,"H100001,H100002","B,A","H200001,H200002,H200003,H200004","A,A,A,B","H300001,H300002,H300003","A,A,A",CAP,4,Offer subject to Interview

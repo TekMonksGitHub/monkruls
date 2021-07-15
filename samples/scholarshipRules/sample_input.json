@@ -1,30 +1,28 @@
 {
     "functions": ["{{{current_folder}}}/functions.js"],
 
-    "objects": [{"object":"{{{current_folder}}}/student.csv"}, {"GPA":"valueOf(object.gpa[0])"}],
+    "objects": [{"Student":"{{{current_folder}}}/student.csv"}],
     
     "data": [
-        {"course_categories":"{{{current_folder}}}/course_categories.csv"},
-        {"course_mcs":"{{{current_folder}}}/course_mcs.lookup_table.csv"}
+        {"countries":"{{{current_folder}}}/countryTables.csv"}
     ],
 
     "rule_bundles": [
-        "{{{current_folder}}}/nus.ge5.ruls.json", 
-        "{{{current_folder}}}/nus.csf.ruls.json",
-        "{{{current_folder}}}/nus.csbd.ruls.json",
-        "{{{current_folder}}}/nus.itp_ms.ruls.json",
-        "{{{current_folder}}}/nus.ue.ruls.json",
-        "{{{current_folder}}}/nus.degree_classification.decision_table.csv",
-        "{{{current_folder}}}/nus.grad.ruls.json"
+        "{{{current_folder}}}/nus.scholarship.6.1.decision_table.csv"
     ],
     
     "outputs": [
-        {"object":"{{{current_folder}}}/output.csv"},
+        {"Student":"{{{current_folder}}}/output.csv"},
         {"$failed_reasons":"{{{current_folder}}}/failed_reasons.csv"},
         {"$failed_rules":"{{{current_folder}}}/failed_rules.csv"}
     ],
 
     "rule_parameters": [
-        {"name": "CS4000_COURSE_PATTERN", "value":"CS4..."}
+        {"name": "H1OrH2GradeForGuaranteedOffer", "value":"['A']"},
+        {"name": "H1OrH2GradeOrBetterForGuaranteedOffer", "value":"['A','B','C']"},
+        {"name": "UASValueForALevel", "value":"4"},
+        {"name": "PointsForIBLevel", "value":"4"},
+        {"name": "PointsCutoffForIBLevel", "value":"3"},
+        {"name": "CAPCutoffForNUSHS", "value":"3"}
     ]
 }

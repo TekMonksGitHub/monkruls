@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\lib\\monkruls.js",
-            "args": ["${workspaceFolder}\\samples\\sample_input.json"]
+            "args": ["${workspaceFolder}\\samples\\scholarshipRules\\sample_input.json"]
         }
     ]
 }
