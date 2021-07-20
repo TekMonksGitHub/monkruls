@@ -2,10 +2,10 @@ condition,do,else_do,reason
 "intersect_size(object.courses_taken, course_categories.geq)",object.counts_geq = 1,object.counts_geq = 0,General Education requirements Quantitiave pillar not met
 "count(match_pattern(intersect(object.courses_taken, course_categories.csfnw), 'CS4...')) >= 3",object.meets_csfnw = 1,,"Meeting focus criteria with 3 modules at level 4000 or above is required, not found in Networks"
 "count(match_pattern(intersect(object.courses_taken, course_categories.csfsec), 'CS4...')) >= 3",object.meets_csfsec = 1,,"Meeting focus criteria with 3 modules at level 4000 or above is required, not found in Security"
-((GPA>=4.50)),"[Degree=""Honours (Highest Distinction)""]",,
-((GPA>=4.00)&&(GPA<=4.49)),"[Degree=""Honours (Distinction)""]",,
-((GPA>=3.50)&&(GPA<=3.99)),"[Degree=""Honours (Merit)""]",,
-((GPA>=3)&&(GPA<=3.49)),"[Degree=""Honours""]",,
-((GPA>=2.00)&&(GPA<=2.99)),"[Degree=""Pass""]",,
+(GPA>=4.50),"[Degree=""Honours (Highest Distinction)""]",,
+(GPA>=4.00 && GPA<=4.49),"[Degree=""Honours (Distinction)""]",,
+(GPA>=3.50 && GPA<=3.99),"[Degree=""Honours (Merit)""]",,
+(GPA>=3 && GPA<=3.49),"[Degree=""Honours""]",,
+(GPA>=2.00 && GPA<=2.99),"[Degree=""Pass""]",,
 "caseInsensitiveIsNotEqual(Degree,'fail')","object.meets_gpa = 1,object.degree=Degree","object.meets_gpa = 0,object.degree=Degree","Degree shows failed, most probably GPA issue."
 object.meets_ms && object.meets_csbd && object.meets_csf && object.meets_ge5 && object.meets_itp && object.meets_gpa,object.meets_grad = 1,object.meets_grad = 0,One of the graduation conditions above was not met.

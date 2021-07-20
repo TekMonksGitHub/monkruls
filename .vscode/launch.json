@@ -11,8 +11,8 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\lib\\monkruls.js",
-            "args": ["${workspaceFolder}\\samples\\scholarshipRules\\sample_input.json"]
+            "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
+            "args": ["${workspaceFolder}\\samples\\gradRules\\sample_input.json"]
         }
     ]
 }

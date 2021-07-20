@@ -1,1 +1,1 @@
-@node "%~dp0\lib\monkruls.js" %*
+@node "%~dp0\lib\cmdlineWrapper.js" %*
