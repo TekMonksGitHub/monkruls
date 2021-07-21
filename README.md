@@ -38,7 +38,8 @@ npm install mustache
 
 * Run from command line using this command. This runs the tool in a one worker cluster. Don't add more workers. 
 ```
-monkruls.bat 
+[windows] monkruls.bat 
+[linux] monkruls.sh
 ```
 
 
