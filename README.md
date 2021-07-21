@@ -42,6 +42,22 @@ npm install mustache
 [linux] monkruls.sh
 ```
 
+### Using from a web browser
+Use the following instructions
+
+* Change configuration options as you prefer. Then build the browserified bundle using this command
+```
+[windows] buildBrowserBundle.bat 
+[linux] buildBrowserBundle.sh
+```
+
+* Place `[monkruls]/lib/monkrulsBrowserified.min.js` in the web application path. Let's assume this is `[path]`.
+
+* Import the rules engine using this command `<script src="[path]/monkrulsBrowserified.min.js"></script>`
+
+* Run the engine by calling it as `monkruls.runRules([input spec as JSON])`
+
+* Samples folders contain various input specs.
 
 ### Contribution guidelines ###
 
