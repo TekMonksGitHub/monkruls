@@ -55,7 +55,11 @@ Use the following instructions
 
 * Import the rules engine using this command `<script src="[path]/monkrulsBrowserified.min.js"></script>`
 
-* Run the engine by calling it as `monkruls.runRules([input spec as JSON])`
+* Run the engine by calling it as 
+```
+const webRuls = require("webRuls");
+webRuls.runRules([input spec as JSON])
+```
 
 * Samples folders contain various input specs.
 
