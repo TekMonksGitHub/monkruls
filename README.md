@@ -58,7 +58,7 @@ Use the following instructions
 * Run the engine by calling it as 
 ```
 const webRuls = require("webRuls");
-webRuls.runRules([input spec as JSON])
+const {results} = webRuls.runRules([input spec as JSON]);
 ```
 
 * Samples folders contain various input specs.
