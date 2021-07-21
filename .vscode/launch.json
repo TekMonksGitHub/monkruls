@@ -7,12 +7,52 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Run Monkruls",
+            "name": "Run Monkruls - Gradrules",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
             "args": ["${workspaceFolder}\\samples\\gradRules\\sample_input.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Monkruls - Gradrules - No Files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
+            "args": ["${workspaceFolder}\\samples\\gradRules\\sample_input_nofiles.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run CSV Parser",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\tools\\csvparser.js",
+            "args": ["${workspaceFolder}\\samples\\gradRules\\course_categories.csv"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Singleline JSON",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\tools\\singlelinejson.js",
+            "args": ["${workspaceFolder}\\samples\\gradRules\\nus.csbd.ruls.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run File to JSON String",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\tools\\filetojsonstring.js",
+            "args": ["${workspaceFolder}\\samples\\gradRules\\nus.degree_classification.decision_table.csv"]
         }
     ]
 }

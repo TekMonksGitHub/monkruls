@@ -1,25 +1,23 @@
-/**
- * Command line interface to the monkruls engine
+/** 
+ * Parses a CSV file as a normal file or lookup table. 
+ * (C) 2021 TekMonks. All rights reserved.
  */
-const path = require("path");
-const fspromises = require("fs").promises;
-global.CONSTANTS = require(`${__dirname}/constants.js`);
+ const path = require("path");
+global.CONSTANTS = require(`${__dirname}/../lib/constants.js`);
 const logger = require(`${CONSTANTS.LIBDIR}/log.js`);
 const monkruls = require(`${CONSTANTS.LIBDIR}/monkruls.js`);
 
 if (require.main === module) {
     process.argv.splice(0, 2); if (process.argv.length == 0) {
-        console.error("Usage: monkruls <path to input descriptor>");
+        console.error("Usage: csvparser <path to csv>");
         process.exit(1);
     } else try { 
         logger.initGlobalLoggerSync(CONSTANTS.LOGMAIN); LOG.overrideConsole(); 
-        LOG.info(`Processing input definition - ${process.argv[0]}`);
+        LOG.console(`Parsing CSV file - ${path.resolve(process.argv[0])}\n\n`);
         (async _ => { 
             try { 
-                const {results, objects} = await monkruls.runRules(JSON.parse(await fspromises.readFile(process.argv[0], 
-                    "utf-8")), path.resolve(path.dirname(process.argv[0]))); 
-                LOG.console(`Done. Execution time: ${objects.$runtime} milliseconds.\n`); 
-                LOG.console(`Results follow\n\n${JSON.stringify(results, null, 4)}`);
+                const parsedObject = await monkruls.parseCSV(path.resolve(process.argv[0]), process.argv[0].toLowerCase().endsWith(".lookup_table.csv"));
+                LOG.console(JSON.stringify(parsedObject));
             } catch (err) {LOG.error("Error in rules engine "+err); if (err.stack) LOG.error(err.stack);}
             LOG.flush(_=>process.exit(0)); 
         })();
