@@ -10,12 +10,12 @@
 
     "rule_bundles": [
 		{"name":"nus.ge5", "rules":"{{{current_folder}}}/nus.ge5.ruls.json"}, 
-        {"name":"nus.ge5", "rules":"{{{current_folder}}}/nus.csf.ruls.json"},
-        {"name":"nus.ge5", "rules":"{{{current_folder}}}/nus.csbd.ruls.json"},
-        {"name":"nus.ge5", "rules":"{{{current_folder}}}/nus.itp_ms.ruls.json"},
-        {"name":"nus.ge5", "rules":"{{{current_folder}}}/nus.ue.ruls.json"},
-        {"name":"nus.ge5", "rules":"{{{current_folder}}}/nus.degree_classification.decision_table.csv"},
-        {"name":"nus.ge5", "rules":"{{{current_folder}}}/nus.grad.ruls.json"}
+        {"name":"nus.csf", "rules":"{{{current_folder}}}/nus.csf.ruls.json"},
+        {"name":"nus.csbd", "rules":"{{{current_folder}}}/nus.csbd.ruls.json"},
+        {"name":"nus.itp_ms", "rules":"{{{current_folder}}}/nus.itp_ms.ruls.json"},
+        {"name":"nus.ue", "rules":"{{{current_folder}}}/nus.ue.ruls.json"},
+        {"name":"nus.degree_classification", "rules":"{{{current_folder}}}/nus.degree_classification.decision_table.csv"},
+        {"name":"nus.grad", "rules":"{{{current_folder}}}/nus.grad.ruls.json"}
     ],
     
     "outputs": [

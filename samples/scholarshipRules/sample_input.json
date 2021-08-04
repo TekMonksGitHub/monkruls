@@ -1,20 +1,20 @@
 {
-    "functions": ["{{{current_folder}}}/functions.js"],
+    "functions": [{"name":"customFunctions", "code":"{{{current_folder}}}/functions.js"}],
 
-    "objects": [{"Student":"{{{current_folder}}}/student.csv"}],
+    "objects": [{"name":"Student", "data":"{{{current_folder}}}/student.csv"}],
     
     "data": [
-        {"countries":"{{{current_folder}}}/countryTables.csv"}
+        {"name":"countryTables", "data":"{{{current_folder}}}/countryTables.csv"}
     ],
 
     "rule_bundles": [
-        "{{{current_folder}}}/nus.scholarship.6.1.decision_table.csv"
+        {"name":"scholarship", "rules":"{{{current_folder}}}/nus.scholarship.6.1.decision_table.csv"}
     ],
     
     "outputs": [
-        {"Student":"{{{current_folder}}}/output.csv"},
-        {"$failed_reasons":"{{{current_folder}}}/failed_reasons.csv"},
-        {"$failed_rules":"{{{current_folder}}}/failed_rules.csv"}
+        {"name":"Student", "output":"{{{current_folder}}}/output.csv"},
+        {"name":"$failed_reasons", "output":"{{{current_folder}}}/failed_reasons.csv"},
+        {"name":"$failed_rules", "output":"{{{current_folder}}}/failed_rules.csv"}
     ],
 
     "rule_parameters": [
