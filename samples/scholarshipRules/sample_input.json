@@ -1,10 +1,10 @@
 {
     "functions": [{"name":"customFunctions", "code":"{{{current_folder}}}/functions.js"}],
 
-    "objects": [{"name":"Student", "data":"{{{current_folder}}}/student.csv"}],
+    "objects": [{"name":"Student", "data":"{{{current_folder}}}/student_extralines.csv"}],
     
     "data": [
-        {"name":"countryTables", "data":"{{{current_folder}}}/countryTables.csv"}
+        {"name":"countries", "data":"{{{current_folder}}}/countryTables.csv"}
     ],
 
     "rule_bundles": [

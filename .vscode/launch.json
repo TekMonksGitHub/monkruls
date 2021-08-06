@@ -27,6 +27,16 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Run Monkruls - Scholarship rules",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
+            "args": ["${workspaceFolder}\\samples\\scholarshipRules\\sample_input.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Run CSV Parser",
             "skipFiles": [
                 "<node_internals>/**"
