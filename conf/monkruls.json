@@ -1,3 +1,4 @@
 {
-    "maxloops": 100
+    "maxloops": 100,
+    "pubpath": "published"
 }
