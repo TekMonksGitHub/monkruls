@@ -1,0 +1,364 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "description": "Monkruls Rules Engine API Tests",
+        "id": "f946c171-5c57-42d2-bd24-21e91be9fa4c",
+        "name": "Monkruls"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"name\":\"StudentGPARules\",\n  \"op\": \"delete\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/monkruls/admin"
+            },
+            "id": "6817b4d7-a053-41cd-8e1e-c0311d0adb50",
+            "name": "Delete Rules",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI4OTE0MjAzMTc3LCJqdGkiOiJlZWIwODZkOTFmNmQ5NmQ3MzlhMDM4YjdkMzYzNzhmNyIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.f66842cee11b9ba5f072020d30dff08740b00d2e8780107bb5a81cb3b3b02ad2"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "id",
+                    "value": "admin"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "pw",
+                    "value": "DLT4TekMonks"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/monkruls/login"
+            },
+            "id": "80cde012-f16e-49c3-9e20-768f0ac71804",
+            "name": "Login Admin",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"name\":\"StudentGPARules\",\n  \"input\": {\n              \"rule_bundles\": [\n                  {\n                      \"name\": \"Decision1\",\n                      \"rules\": [\n                          {\n                              \"description\": \"Decision1\",\n                              \"nodeName\": \"decision\",\n                              \"id\": \"162849030905192.77446319681444\",\n                              \"decisiontable\": \"csv://Student.GPA,Student.Outcome,Reason\\r\\n$[0]>=3.5,Distinction,GPA Less than 3.5 means no distinction\\r\\n2.0<=$[0] && $[0]<3.5,Pass,GPA More between 2.0 to 3.5 for Pass grade\\r\\n$[0]<2.0,Fail,GPA More than 2.0 needed to pass\"\n                          }\n                      ]\n                  }\n              ],\n              \"functions\": [],\n              \"data\": [],\n              \"rule_parameters\": [],\n              \"outputs\": [],\n              \"objects\": [\n                  {\n                      \"description\": \"Student - Passes\",\n                      \"nodeName\": \"object\",\n                      \"name\": \"Student\",\n                      \"id\": \"162849034264681.22294168059432\",\n                      \"data\": \"csv://Name,GPA\\r\\nRandhir Pawja,3.3\",\n                      \"type\": \"CSV\"\n                  },\n                  {\n                      \"description\": \"Student - Distinction\",\n                      \"nodeName\": \"object\",\n                      \"name\": \"Student\",\n                      \"id\": \"162849239818911.131507975708722\",\n                      \"data\": \"csv://Name,GPA\\r\\nKaka Ji,3.6\",\n                      \"type\": \"CSV\"\n                  }\n              ],\n              \"simulations\": [\n                  {\n                      \"description\": \"Simulate1\",\n                      \"nodeName\": \"simulate\",\n                      \"id\": \"162861113679288.69485647622099\",\n                      \"allTestObjects\": \"[{\\\"id\\\":\\\"162849034264681.22294168059432\\\",\\\"img\\\":\\\"http://localhost:8080/apps/monastery/views/monkruls-designer/dialogs/object.svg\\\",\\\"label\\\":\\\"Student - Passes\\\"}]\",\n                      \"doTestWithObjects\": \"[{\\\"id\\\":\\\"162849239818911.131507975708722\\\",\\\"img\\\":\\\"http://localhost:8080/apps/monastery/views/monkruls-designer/dialogs/object.svg\\\",\\\"label\\\":\\\"Student - Distinction\\\"}]\"\n                  }\n              ]\n          },\n  \"op\": \"add\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/monkruls/admin"
+            },
+            "id": "70a4ce00-b1df-4c5a-9977-72be48d64d61",
+            "name": "Publish Rules",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI4OTE1ODg4NTA3LCJqdGkiOiIxMWY0NmFmYWE1OWY0MmNmMGZmMDY5YWRjMDQyMzU5MiIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.986bb0ffb7502b55911672da932ea288896cbeab5a6353e4068f00e5f8a9d2c7"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"name\":\"StudentGPARules\",\n  \"op\": \"read\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/monkruls/admin"
+            },
+            "id": "3b46dc62-f881-485a-8be9-d13bbd4cbd43",
+            "name": "Read Rules",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI4OTE1ODg4NTA3LCJqdGkiOiIxMWY0NmFmYWE1OWY0MmNmMGZmMDY5YWRjMDQyMzU5MiIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.986bb0ffb7502b55911672da932ea288896cbeab5a6353e4068f00e5f8a9d2c7"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"name\":\"StudentGPARules\",\n  \"objects\": [\n                  {\n                      \"description\": \"Student - Passes\",\n                      \"nodeName\": \"object\",\n                      \"name\": \"Student\",\n                      \"id\": \"162849034264681.22294168059432\",\n                      \"data\": \"csv://Name,GPA\\r\\nRandhir Pawja,3.8\",\n                      \"type\": \"CSV\"\n                  }\n              ],\n  \"op\": \"add\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/monkruls/runrules"
+            },
+            "id": "a595c5d4-cd60-4f9e-8532-d3b92ae5607c",
+            "name": "Run Rules - Student Distinction",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI4OTE2OTQxNjQzLCJqdGkiOiIzMzBkMzE1OGMxMmZkZmQ2OTUzMTE4ZjVhM2U1MjM0NSIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.11631cae3f8acf2985e6af866f1dce605f5ab7926c64cb2050d383169d8ad873"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"name\":\"StudentGPARules\",\n  \"objects\": [\n                  {\n                      \"description\": \"Student - Passes\",\n                      \"nodeName\": \"object\",\n                      \"name\": \"Student\",\n                      \"id\": \"162849034264681.22294168059432\",\n                      \"data\": \"csv://Name,GPA\\r\\nRandhir Pawja,3.3\",\n                      \"type\": \"CSV\"\n                  }\n              ],\n  \"op\": \"add\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/monkruls/runrules"
+            },
+            "id": "54d77e68-e967-423b-8b1c-77ad21e4dd20",
+            "name": "Run Rules - Student Passes",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI4OTE2OTQxNjQzLCJqdGkiOiIzMzBkMzE1OGMxMmZkZmQ2OTUzMTE4ZjVhM2U1MjM0NSIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.11631cae3f8acf2985e6af866f1dce605f5ab7926c64cb2050d383169d8ad873"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"name\":\"StudentGPARules\",\n  \"input\": {\n              \"rule_bundles\": [\n                  {\n                      \"name\": \"GPADecision\",\n                      \"rules\": [\n                          {\n                              \"description\": \"GPADecision\",\n                              \"nodeName\": \"decision\",\n                              \"id\": \"162849030905192.77446319681444\",\n                              \"decisiontable\": \"csv://Student.GPA,Student.Outcome,Reason\\r\\n$[0]>=3.5,Distinction,GPA Less than 3.5 means no distinction\\r\\n2.0<=$[0] && $[0]<3.5,Pass,GPA More between 2.0 to 3.5 for Pass grade\\r\\n$[0]<2.0,Fail,GPA More than 2.0 needed to pass\"\n                          }\n                      ]\n                  }\n              ],\n              \"functions\": [],\n              \"data\": [],\n              \"rule_parameters\": [],\n              \"outputs\": [],\n              \"objects\": [\n                  {\n                      \"description\": \"Student - Passes\",\n                      \"nodeName\": \"object\",\n                      \"name\": \"Student\",\n                      \"id\": \"162849034264681.22294168059432\",\n                      \"data\": \"csv://Name,GPA\\r\\nRandhir Pawja,3.3\",\n                      \"type\": \"CSV\"\n                  },\n                  {\n                      \"description\": \"Student - Distinction\",\n                      \"nodeName\": \"object\",\n                      \"name\": \"Student\",\n                      \"id\": \"162849239818911.131507975708722\",\n                      \"data\": \"csv://Name,GPA\\r\\nKaka Ji,3.6\",\n                      \"type\": \"CSV\"\n                  }\n              ],\n              \"simulations\": [\n                  {\n                      \"description\": \"Simulate1\",\n                      \"nodeName\": \"simulate\",\n                      \"id\": \"162861113679288.69485647622099\",\n                      \"allTestObjects\": \"[{\\\"id\\\":\\\"162849034264681.22294168059432\\\",\\\"img\\\":\\\"http://localhost:8080/apps/monastery/views/monkruls-designer/dialogs/object.svg\\\",\\\"label\\\":\\\"Student - Passes\\\"}]\",\n                      \"doTestWithObjects\": \"[{\\\"id\\\":\\\"162849239818911.131507975708722\\\",\\\"img\\\":\\\"http://localhost:8080/apps/monastery/views/monkruls-designer/dialogs/object.svg\\\",\\\"label\\\":\\\"Student - Distinction\\\"}]\"\n                  }\n              ]\n          },\n  \"op\": \"add\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:9090",
+              "path": "/apps/monkruls/admin"
+            },
+            "id": "4c3fa924-5ea0-4a1b-9570-f2a75c8e9467",
+            "name": "Update Rules",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "x-api-key",
+                "value": "fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer eyJpc3MiOiJNb25rc2h1IiwiaWF0IjoxNjI4OTE0MjAzMTc3LCJqdGkiOiJlZWIwODZkOTFmNmQ5NmQ3MzlhMDM4YjdkMzYzNzhmNyIsInN1YiI6ImFkbWluIn0=.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.f66842cee11b9ba5f072020d30dff08740b00d2e8780107bb5a81cb3b3b02ad2"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

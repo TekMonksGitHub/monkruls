@@ -1,5 +1,5 @@
 {
-    "/apps/monkruls/login" : "/apis/login.js?keys=fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389&needsToken=false&addsToken=sub:admin",
+    "/apps/monkruls/login" : "/apis/login.js?get=true&keys=fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389&needsToken=false&addsToken=sub:admin",
     "/apps/monkruls/admin" : "/apis/admin.js?keys=fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389&needsToken=admin",
-    "/apps/monkruls/runRules" : "/apis/apiWrapper.js?keys=fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
+    "/apps/monkruls/runrules" : "/apis/apiWrapper.js?keys=fheiwu98237hjief8923ydewjidw834284hwqdnejwr79389"
 }

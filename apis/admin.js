@@ -10,11 +10,11 @@ exports.doService = async jsonReq => {
 	
 	LOG.debug("Admin request for package: " + jsonReq.name);
 
-    const pubpath = `${APP_CONSTANTS.APP_ROOT}/${CONF.pubpath}/${jsonReq.name}`;
+    const pubpath = `${APP_CONSTANTS.APP_ROOT}/${CONF.pubpath}/${jsonReq.name}.${APP_CONSTANTS.MONKRULS_EXTENSION}`;
 
     try {
         if ((jsonReq.op.toLowerCase() == "update") || (jsonReq.op.toLowerCase() == "add")) {
-            await fspromises.writeFile(pubpath, JSON.stringify(jsonReq.input), "utf8");
+            await fspromises.writeFile(pubpath, JSON.stringify(jsonReq.input, null, 4), "utf8");
             LOG.info(`Published or updated a new rules package ${jsonReq.name}`);
             return CONSTANTS.TRUE_RESULT;
         } else if (jsonReq.op.toLowerCase() == "delete") {
@@ -22,7 +22,7 @@ exports.doService = async jsonReq => {
             LOG.info(`Deleted rules package ${jsonReq.name}`);
             return CONSTANTS.TRUE_RESULT;
         } else if (jsonReq.op.toLowerCase() == "read") {
-            const data = JSON.parse(fspromises.readFile(pubpath, "utf8"));
+            const data = JSON.parse(await fspromises.readFile(pubpath, "utf8"));
             LOG.info(`Read back rules package ${jsonReq.name}`);
             return {result: true, data};
         }
