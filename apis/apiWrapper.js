@@ -3,14 +3,14 @@
  * (C) 2020 TekMonks. All rights reserved.
  */
  const fspromises = require("fs").promises;
- const CONF = require(`${APP_CONSTANTS.CONF_DIR}/monkruls.json`), MONKRULS_CONSTANTS = require(`${APP_CONSTANTS.APP_ROOT}/lib/constants.js`);
+ const CONF = require(`${APP_CONSTANTS.MONKRULS.CONF_DIR}/monkruls.json`), MONKRULS_CONSTANTS = require(`${APP_CONSTANTS.MONKRULS.APP_ROOT}/lib/constants.js`);
  
  exports.doService = async jsonReq => {
      if (!validateRequest(jsonReq)) {LOG.error("Validation failure."); return CONSTANTS.FALSE_RESULT;}
      
      LOG.debug("Run rules request for package: " + jsonReq.name + ", with objects: " + jsonReq.objects);
  
-     const pubpath = `${APP_CONSTANTS.APP_ROOT}/${CONF.pubpath}/${jsonReq.name}.${APP_CONSTANTS.MONKRULS_EXTENSION}`;
+     const pubpath = `${APP_CONSTANTS.MONKRULS.APP_ROOT}/${CONF.pubpath}/${jsonReq.name}.${APP_CONSTANTS.MONKRULS.MONKRULS_EXTENSION}`;
  
      try {
         const input = JSON.parse(await fspromises.readFile(pubpath, "utf8"));

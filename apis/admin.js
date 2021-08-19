@@ -3,14 +3,14 @@
  * (C) 2020 TekMonks. All rights reserved.
  */
 const fspromises = require("fs").promises;
-const CONF = require(`${APP_CONSTANTS.CONF_DIR}/monkruls.json`);
+const CONF = require(`${APP_CONSTANTS.MONKRULS.CONF_DIR}/monkruls.json`);
 
 exports.doService = async jsonReq => {
 	if (!validateRequest(jsonReq)) {LOG.error("Validation failure."); return CONSTANTS.FALSE_RESULT;}
 	
 	LOG.debug("Admin request for package: " + jsonReq.name);
 
-    const pubpath = `${APP_CONSTANTS.APP_ROOT}/${CONF.pubpath}/${jsonReq.name}.${APP_CONSTANTS.MONKRULS_EXTENSION}`;
+    const pubpath = `${APP_CONSTANTS.MONKRULS.APP_ROOT}/${CONF.pubpath}/${jsonReq.name}.${APP_CONSTANTS.MONKRULS.MONKRULS_EXTENSION}`;
 
     try {
         if ((jsonReq.op.toLowerCase() == "update") || (jsonReq.op.toLowerCase() == "add")) {

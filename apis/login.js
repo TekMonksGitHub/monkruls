@@ -5,8 +5,8 @@
  */
 const fspromises = require("fs").promises; 
 const cryptMod = require(CONSTANTS.LIBDIR+"/crypt.js");
-const ADMIN_JSON = `${APP_CONSTANTS.CONF_DIR}/admin.json`;
 const LOGIN_REG_DISTM_KEY = "__org_monkshu_loginregistry_key";
+const ADMIN_JSON = `${APP_CONSTANTS.MONKRULS.CONF_DIR}/admin.json`;
 
 exports.doService = async jsonReq => {
 	if (jsonReq && (!jsonReq.op)) jsonReq.op = "login";
