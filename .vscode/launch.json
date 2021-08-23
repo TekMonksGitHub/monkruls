@@ -37,6 +37,16 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Run Monkruls - GPA rules",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
+            "args": ["${workspaceFolder}\\samples\\gpaRules\\rules.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Run CSV Parser",
             "skipFiles": [
                 "<node_internals>/**"
