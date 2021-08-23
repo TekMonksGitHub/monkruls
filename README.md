@@ -4,6 +4,8 @@ The MonkRuls business rules engine.
 
 A powerful, but lightweight business rules engine.
 
+<p align="center"><img src="https://github.com/TekMonksGitHub/raw/raw/master/monkruls/logo.png" width="349px" height="254px"></p>
+
 # Features #
 
 * Runs on fundamentals - rules, data, input object and output object definition.
