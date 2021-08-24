@@ -4,8 +4,6 @@ nus.csbd,"{""condition"":""count(match_pattern(intersect(object.courses_taken, c
 nus.csbd,"{""condition"":""count(match_pattern(intersect(object.courses_taken, course_categories.csfsec), 'CS4...')) >= 3"",""do"":""object.meets_csfsec = 1"",""reason"":""Meeting focus criteria with 3 modules at level 4000 or above is required, not found in Security""}",4
 nus.degree_classification,"{""condition"":""(GPA>=4.50)"",""do"":""[Degree=\""Honours (Highest Distinction)\""]""}",0
 nus.degree_classification,"{""condition"":""(GPA>=4.00 && GPA<=4.49)"",""do"":""[Degree=\""Honours (Distinction)\""]""}",1
-nus.degree_classification,"{""condition"":""(GPA>=3.50 && GPA<=3.99)"",""do"":""[Degree=\""Honours (Merit)\""]""}",2
 nus.degree_classification,"{""condition"":""(GPA>=3 && GPA<=3.49)"",""do"":""[Degree=\""Honours\""]""}",3
 nus.degree_classification,"{""condition"":""(GPA>=2.00 && GPA<=2.99)"",""do"":""[Degree=\""Pass\""]""}",4
-nus.grad,"{""condition"":""caseInsensitiveIsNotEqual(Degree,'fail')"",""do"":[""object.meets_gpa = 1"",""object.degree=Degree""],""else_do"":[""object.meets_gpa = 0"",""object.degree=Degree""],""reason"":""Degree shows failed, most probably GPA issue.""}",0
-nus.grad,"{""condition"":""object.meets_ms && object.meets_csbd && object.meets_csf && object.meets_ge5 && object.meets_itp && object.meets_gpa"",""do"":""object.meets_grad = 1"",""else_do"":""object.meets_grad = 0"",""reason"":""One of the graduation conditions above was not met.""}",1
+nus.degree_classification,"{""condition"":""(GPA<=1.99)"",""do"":""[Degree=\""Fail\""]""}",5
