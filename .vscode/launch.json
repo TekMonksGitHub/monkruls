@@ -73,6 +73,16 @@
             ],
             "program": "${workspaceFolder}\\tools\\filetojsonstring.js",
             "args": ["${workspaceFolder}\\samples\\gradRules\\nus.degree_classification.decision_table.csv"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Inline Conf",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\tools\\inlineConf.js",
+            "args": ["${workspaceFolder}\\conf\\functions.json"]
         }
     ]
 }
