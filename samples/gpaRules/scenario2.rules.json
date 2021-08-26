@@ -1,0 +1,10 @@
+{
+	"rule_bundles": [
+		{"name": "PassFailDecision","rules": "{{{current_folder}}}/gpa.decision_table.csv"}
+	],
+	"functions": [],
+	"data": [],
+	"rule_parameters": [],
+	"outputs": [{"name": "Student", "output": "output"}],
+	"objects": [{"name": "Student", "data": "{{{current_folder}}}/student.csv"}]
+}

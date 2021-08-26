@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "node",
             "request": "launch",
@@ -37,12 +38,22 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Run Monkruls - GPA rules",
+            "name": "Run Monkruls - GPA rules - Scenario 1",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
-            "args": ["${workspaceFolder}\\samples\\gpaRules\\rules.json"]
+            "args": ["${workspaceFolder}\\samples\\gpaRules\\scenario1.rules.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Monkruls - GPA rules - Scenario 2",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
+            "args": ["${workspaceFolder}\\samples\\gpaRules\\scenario2.rules.json"]
         },
         {
             "type": "node",
