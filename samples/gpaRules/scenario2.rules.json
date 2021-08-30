@@ -4,7 +4,9 @@
 	],
 	"functions": [],
 	"data": [],
-	"rule_parameters": [],
+	"rule_parameters": [
+		{"name":"FailCutoff", "value": 2.0}
+	],
 	"outputs": [{"name": "Student", "output": "output"}],
 	"objects": [{"name": "Student", "data": "{{{current_folder}}}/student.csv"}]
 }

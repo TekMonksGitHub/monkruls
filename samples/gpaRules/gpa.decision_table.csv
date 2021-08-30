@@ -1,3 +1,3 @@
 ﻿Student.Grades,Student.Output,GPA Decision (Student.GPA),Student.Major
-average($) < 2.0,Fail,average(Student.Grades),Computer Science
-average($) >= 2.0,Pass,average(Student.Grades),Computer Science
+average($) < {{FailCutoff}},Fail,average(Student.Grades),Computer Science
+average($) >= {{FailCutoff}},Pass,average(Student.Grades),Computer Science

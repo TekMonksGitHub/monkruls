@@ -2,12 +2,14 @@
 	"rule_bundles": [{
 		"name": "GPADecision",
 		"rules": [{
-			"decisiontable": "csv://Student.GPA,Student.Outcome,Reason\r\n$[0]>=3.5,Distinction,GPA Less than 3.5 means no distinction\r\n2.0<=$[0] && $[0]<3.5,Pass,GPA More between 2.0 to 3.5 for Pass grade\r\n$[0]<2.0,Fail,GPA More than 2.0 needed to pass"
+			"decisiontable": "csv://Student.GPA,Student.Outcome,Reason\r\n$[0]>=3.5,Distinction,GPA Less than 3.5 means no distinction\r\n{{FailCutoff}}<=$[0] && $[0]<3.5,Pass,GPA More between {{FailCutoff}} to 3.5 for Pass grade\r\n$[0]<{{FailCutoff}},Fail,GPA More than {{FailCutoff}} needed to pass"
 		}]
 	}],
 	"functions": [],
 	"data": [],
-	"rule_parameters": [],
+	"rule_parameters": [
+		{"name":"FailCutoff", "value": 2.0}
+	],
 	"outputs": [{
 		"name": "Student",
 		"output": "output"
