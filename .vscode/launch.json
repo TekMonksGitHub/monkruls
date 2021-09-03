@@ -94,6 +94,16 @@
             ],
             "program": "${workspaceFolder}\\tools\\inlineConf.js",
             "args": ["${workspaceFolder}\\conf\\functions.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Monkruls - Random Rules",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
+            "args": ["${workspaceFolder}\\samples\\gpaRules\\dependentTables.monkruls.json"]
         }
     ]
 }

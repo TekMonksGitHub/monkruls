@@ -2,8 +2,8 @@ bundleName,rule,index
 nus.ge5,"{""condition"":""intersect_size(object.courses_taken, course_categories.geq)"",""do"":""object.counts_geq = 1"",""else_do"":""object.counts_geq = 0"",""reason"":""General Education requirements Quantitiave pillar not met""}",4
 nus.csbd,"{""condition"":""count(match_pattern(intersect(object.courses_taken, course_categories.csfnw), 'CS4...')) >= 3"",""do"":""object.meets_csfnw = 1"",""reason"":""Meeting focus criteria with 3 modules at level 4000 or above is required, not found in Networks""}",2
 nus.csbd,"{""condition"":""count(match_pattern(intersect(object.courses_taken, course_categories.csfsec), 'CS4...')) >= 3"",""do"":""object.meets_csfsec = 1"",""reason"":""Meeting focus criteria with 3 modules at level 4000 or above is required, not found in Security""}",4
-nus.degree_classification,"{""condition"":""(GPA>=4.50)"",""do"":""[Degree=\""Honours (Highest Distinction)\""]""}",0
-nus.degree_classification,"{""condition"":""(GPA>=4.00 && GPA<=4.49)"",""do"":""[Degree=\""Honours (Distinction)\""]""}",1
-nus.degree_classification,"{""condition"":""(GPA>=3.50 && GPA<=3.99)"",""do"":""[Degree=\""Honours (Merit)\""]""}",2
-nus.degree_classification,"{""condition"":""(GPA>=3 && GPA<=3.49)"",""do"":""[Degree=\""Honours\""]""}",3
-nus.degree_classification,"{""condition"":""(GPA<=1.99)"",""do"":""[Degree=\""Fail\""]""}",5
+nus.degree_classification,"{""isDecisionTableRule"":true,""doObjects"":{""Degree=\""Honours (Highest Distinction)\"""":{""lhs"":""Degree"",""rhs"":""Honours (Highest Distinction)""}},""condition"":""(GPA>=4.50)"",""do"":[""Degree=\""Honours (Highest Distinction)\""""]}",0
+nus.degree_classification,"{""isDecisionTableRule"":true,""doObjects"":{""Degree=Honours (Distinction)"":{""lhs"":""Degree"",""rhs"":""Honours (Distinction)""}},""condition"":""(GPA>=4.00 && GPA<=4.49)"",""do"":[""Degree=Honours (Distinction)""]}",1
+nus.degree_classification,"{""isDecisionTableRule"":true,""doObjects"":{""Degree=Honours (Merit)"":{""lhs"":""Degree"",""rhs"":""Honours (Merit)""}},""condition"":""(GPA>=3.50 && GPA<=3.99)"",""do"":[""Degree=Honours (Merit)""]}",2
+nus.degree_classification,"{""isDecisionTableRule"":true,""doObjects"":{""Degree=Honours"":{""lhs"":""Degree"",""rhs"":""Honours""}},""condition"":""(GPA>=3 && GPA<=3.49)"",""do"":[""Degree=Honours""]}",3
+nus.degree_classification,"{""isDecisionTableRule"":true,""doObjects"":{""Degree=Fail"":{""lhs"":""Degree"",""rhs"":""Fail""}},""condition"":""(GPA<=1.99)"",""do"":[""Degree=Fail""]}",5

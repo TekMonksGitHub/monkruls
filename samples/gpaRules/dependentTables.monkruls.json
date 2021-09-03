@@ -1,0 +1,66 @@
+{
+    "rule_bundles": [
+        {
+            "name": "Decision1",
+            "rules": [
+                {
+                    "description": "Decision1",
+                    "nodeName": "decision",
+                    "id": "16306864715580.06668808161036655",
+                    "decisiontable": "csv://Student.GPA,Student.Outcome\r\n<2.0,Fail\r\n$>=2.0 && $<3.5,Pass\r\n>=3.5,Distinction",
+                    "decisiontable_raw": "[\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"Student.GPA,Student.Outcome\\r\\n<2.0,Fail\\r\\n$>=2.0 && $<3.5,Pass\\r\\n>=3.5,Distinction\",\n        \"name\": \"Rules\",\n        \"id\": \"Rules\"\n    },\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"Name,GPA\\r\\nStan Smith,3.5\",\n        \"name\": \"Student\",\n        \"id\": \"Student\"\n    }\n]"
+                }
+            ],
+            "id": "16306864715585.96622737192265"
+        },
+        {
+            "name": "Decision2",
+            "rules": [
+                {
+                    "description": "Decision2",
+                    "nodeName": "decision",
+                    "id": "163068647209750.20719244684817",
+                    "x": 200,
+                    "y": 30,
+                    "decisiontable": "csv://Student.Outcome,Student.Message\r\n\"==\"\"Fail\"\"\",Please try harder next time\r\n\"==\"\"Pass\"\"\",Good job\r\n\"==\"\"Distinction\"\"\",Wow! Congrats!!",
+                    "decisiontable_raw": "[\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"Student.Outcome,Student.Message\\r\\n\\\"==\\\"\\\"Fail\\\"\\\"\\\",Please try harder next time\\r\\n\\\"==\\\"\\\"Pass\\\"\\\"\\\",Good job\\r\\n\\\"==\\\"\\\"Distinction\\\"\\\"\\\",Wow! Congrats!!\",\n        \"name\": \"Rules\",\n        \"id\": \"Rules\"\n    },\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"\",\n        \"name\": \"Objects\",\n        \"id\": \"Objects\"\n    }\n]"
+                }
+            ],
+            "id": "163068647209771.93279526625844",
+            "dependencies": [
+                "16306864715585.96622737192265"
+            ]
+        }
+    ],
+    "functions": [],
+    "data": [],
+    "rule_parameters": [],
+    "outputs": [
+        {
+            "description": "Output1",
+            "nodeName": "output",
+            "id": "163068677481554.379673335929304",
+            "x": 200,
+            "y": 140,
+            "output": "Output",
+            "name": "Student"
+        }
+    ],
+    "objects": [
+        {
+            "description": "Student",
+            "nodeName": "object",
+            "name": "Student",
+            "id": "163068673355915.658625113932633",
+            "x": 30,
+            "y": 140,
+            "data": {
+                "Name": "Stan Smith",
+                "GPA": 3.6
+            },
+            "data_raw": "{\n  \"Name\":\"Stan Smith\",\n  \"GPA\": 3.6\n}",
+            "type": "JSON/Javascript"
+        }
+    ],
+    "simulations": []
+}
