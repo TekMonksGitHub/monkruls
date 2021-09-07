@@ -38,6 +38,16 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Run Monkruls - Scholarship rules - No Files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\lib\\cmdlineWrapper.js",
+            "args": ["${workspaceFolder}\\samples\\scholarshipRules\\scholarshipRules.monkruls.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Run Monkruls - GPA rules - Scenario 1",
             "skipFiles": [
                 "<node_internals>/**"

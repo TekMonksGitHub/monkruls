@@ -1,5 +1,5 @@
 Name,AdmissionNum,Nationality,Qualification,CoreSubject,CoreSubjectGrade,H1Subjects,H1SubjectGrades,H2Subjects,H2SubjectGrades,H3Subjects,H3SubjectGrades,GradeType,Grade
-Student A,48298492,China,A,AL00001,D,H100001,B,H200001,A,H300001,A,CAP,4
-,,,,,,H100002,A,H200002,A,H300002,A,,
-,,,,,,,,H200003,A,H300003,A,,
+Student A,48298492,China,A,AL00001,D,H100001,B,H200001,A,H300001,Pass,CAP,4
+,,,,,,H100002,A,H200002,A,H300002,Pass,,
+,,,,,,,,H200003,A,H300003,Pass,,
 ,,,,,,,,H200004,B,,,,

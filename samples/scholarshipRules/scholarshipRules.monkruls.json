@@ -1,0 +1,140 @@
+{
+    "rule_bundles": [
+        {
+            "name": "Scholarship ",
+            "rules": [
+                {
+                    "description": "Scholarship \nDecision Table",
+                    "nodeName": "decision",
+                    "id": "163090474929535.81504282492867",
+                    "x": 90,
+                    "y": 220,
+                    "decisiontable": "csv://Student.Nationality,Student.Qualification,Student.CoreSubject,Student.CoreSubjectGrade,Student.H2SubjectGrades,Student.H1SubjectGrades,Student.H3SubjectGrades,Student.Grade,Student.Outcome,Reason\r\n\"!intersect_size($,union(Country.A,Country.B))\",,,,,,,,Reject,Eligibility Criteria 1 - Row 11 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='A',,,,,,,Reject,Eligibility Criteria 1 - Row 5 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='A',,,,,$[0]=='Distinction',,Offer subject to Interview,Eligibility Criteria 1 - Row 4 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='A',,,,,,\"$[0]>= {{UASValueForALevel}}, Student.GradeType == 'UAS'\",Offer subject to Interview,Eligibility Criteria 1 - Row 3 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='A',$[0]=='AL00001'||$[0]=='AL00104',\"intersect_size($,['A','B','C','D'])\",\"intersect_size($,['A'])>=3\",\"intersect_size($,{{{H1OrH2GradeForGuaranteedOffer}}}) || intersect_size(Student.H2SubjectGrades,{{{H1OrH2GradeForGuaranteedOffer}}})\",,,Offer subject to Interview,Eligibility Criteria 1 - Row 2 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='A',$[0]=='AL00001'||$[0]=='AL00104',\"intersect_size($,['A','B','C'])\",\"intersect_size($,['A'])>=3\",\"intersect_size($,{{{H1OrH2GradeOrBetterForGuaranteedOffer}}}) || intersect_size(Student.H2SubjectGrades,{{{H1OrH2GradeOrBetterForGuaranteedOffer}}})\",,,Guaranteed Offer,Eligibility Criteria 1 - Row 1 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='IB',,,,,,,Reject,Eligibility Criteria 1 - Row 7 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='IB',$[0]=='IB00003',\"intersect_size($,['A','B','C','D','E'])\",,,,\"$[0]>= {{PointsCutoffForIBLevel}}, $[0]<{{PointsForIBLevel}}, Student.GradeType=='Points'\",Offer subject to Interview,Eligibility Criteria 1 - Row 6 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='IB',$[0]=='IB00003',\"intersect_size($,['A','B','C'])\",,,,\"$[0]>= {{PointsForIBLevel}}, Student.GradeType=='Points'\",Guaranteed Offer,Eligibility Criteria 1 - Row 6 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='NUSHS',,,,,,,Reject,Eligibility Criteria 1 - Row 10 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='NUSHS',$[0]=='NU00001'||$[0]=='NU00002',\"!intersect_size($,['F'])\",,,,\"$[0]>= {{CAPCutoffForNUSHS}}, Student.GradeType=='CAP'\",Offer subject to Interview,Eligibility Criteria 1 - Row 9 Failed\r\n\"intersect_size($,union(Country.A,Country.B))\",$[0]=='NUSHS',$[0]=='NU00001'||$[0]=='NU00002',\"intersect_size($,['A+','A','A1','B+','B','B-','C+'])\",,,,\"$[0]>= {{CAPCutoffForNUSHS}}, Student.GradeType=='CAP'\",Guaranteed Offer,Eligibility Criteria 1 - Row 8 Failed",
+                    "decisiontable_raw": "[\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"Student.Nationality,Student.Qualification,Student.CoreSubject,Student.CoreSubjectGrade,Student.H2SubjectGrades,Student.H1SubjectGrades,Student.H3SubjectGrades,Student.Grade,Student.Outcome,Reason\\r\\n\\\"!intersect_size($,union(Country.A,Country.B))\\\",,,,,,,,Reject,Eligibility Criteria 1 - Row 11 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='A',,,,,,,Reject,Eligibility Criteria 1 - Row 5 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='A',,,,,$[0]=='Distinction',,Offer subject to Interview,Eligibility Criteria 1 - Row 4 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='A',,,,,,\\\"$[0]>= {{UASValueForALevel}}, Student.GradeType == 'UAS'\\\",Offer subject to Interview,Eligibility Criteria 1 - Row 3 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='A',$[0]=='AL00001'||$[0]=='AL00104',\\\"intersect_size($,['A','B','C','D'])\\\",\\\"intersect_size($,['A'])>=3\\\",\\\"intersect_size($,{{{H1OrH2GradeForGuaranteedOffer}}}) || intersect_size(Student.H2SubjectGrades,{{{H1OrH2GradeForGuaranteedOffer}}})\\\",,,Offer subject to Interview,Eligibility Criteria 1 - Row 2 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='A',$[0]=='AL00001'||$[0]=='AL00104',\\\"intersect_size($,['A','B','C'])\\\",\\\"intersect_size($,['A'])>=3\\\",\\\"intersect_size($,{{{H1OrH2GradeOrBetterForGuaranteedOffer}}}) || intersect_size(Student.H2SubjectGrades,{{{H1OrH2GradeOrBetterForGuaranteedOffer}}})\\\",,,Guaranteed Offer,Eligibility Criteria 1 - Row 1 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='IB',,,,,,,Reject,Eligibility Criteria 1 - Row 7 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='IB',$[0]=='IB00003',\\\"intersect_size($,['A','B','C','D','E'])\\\",,,,\\\"$[0]>= {{PointsCutoffForIBLevel}}, $[0]<{{PointsForIBLevel}}, Student.GradeType=='Points'\\\",Offer subject to Interview,Eligibility Criteria 1 - Row 6 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='IB',$[0]=='IB00003',\\\"intersect_size($,['A','B','C'])\\\",,,,\\\"$[0]>= {{PointsForIBLevel}}, Student.GradeType=='Points'\\\",Guaranteed Offer,Eligibility Criteria 1 - Row 6 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='NUSHS',,,,,,,Reject,Eligibility Criteria 1 - Row 10 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='NUSHS',$[0]=='NU00001'||$[0]=='NU00002',\\\"!intersect_size($,['F'])\\\",,,,\\\"$[0]>= {{CAPCutoffForNUSHS}}, Student.GradeType=='CAP'\\\",Offer subject to Interview,Eligibility Criteria 1 - Row 9 Failed\\r\\n\\\"intersect_size($,union(Country.A,Country.B))\\\",$[0]=='NUSHS',$[0]=='NU00001'||$[0]=='NU00002',\\\"intersect_size($,['A+','A','A1','B+','B','B-','C+'])\\\",,,,\\\"$[0]>= {{CAPCutoffForNUSHS}}, Student.GradeType=='CAP'\\\",Guaranteed Offer,Eligibility Criteria 1 - Row 8 Failed\",\n        \"name\": \"Rules\",\n        \"id\": \"Rules\"\n    },\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"\",\n        \"name\": \"Objects\",\n        \"id\": \"Objects\"\n    }\n]"
+                }
+            ],
+            "id": "163090474929517.205004170381333"
+        }
+    ],
+    "functions": [
+        {
+            "description": "caseInsensitiveIsNotEqual \nFunction",
+            "nodeName": "functions",
+            "name": "caseInsensitiveIsNotEqual ",
+            "id": "163090462475761.381434301053496",
+            "x": 260,
+            "y": 50,
+            "code": "/**\n * Sample custom functions module\n * (C)  2020 TekMonks. All rights reserved.\n */\n\nexports.caseInsensitiveIsNotEqual = function(str1,str2) {\n    return str1.toLowerCase() != str2.toLowerCase();\n};"
+        }
+    ],
+    "data": [
+        {
+            "description": "Country Table",
+            "nodeName": "data",
+            "name": "Country",
+            "id": "163090449112639.080709830878455",
+            "data": "csv://A,B\r\nBrunei,China\r\nCambodia,India\r\nIndonesia,\r\nLaos,\r\nMalaysia,\r\nMyanmar,\r\nPhilippines,\r\nThailand,\r\nVietnam,",
+            "data_raw": "[\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"A,B\\r\\nBrunei,China\\r\\nCambodia,India\\r\\nIndonesia,\\r\\nLaos,\\r\\nMalaysia,\\r\\nMyanmar,\\r\\nPhilippines,\\r\\nThailand,\\r\\nVietnam,\",\n        \"name\": \"default\",\n        \"id\": \"default\"\n    },\n    {\n        \"type\": \"plugin\",\n        \"id\": \"isLookupTable\",\n        \"data\": \"on\"\n    }\n]",
+            "type": "CSV",
+            "x": 90,
+            "y": 50
+        }
+    ],
+    "rule_parameters": [
+        {
+            "description": "H1 or H2 Grade For \nGuaranteed Offer",
+            "nodeName": "variable",
+            "id": "163090657840148.91952257208341",
+            "x": 540,
+            "y": 50,
+            "name": "H1OrH2GradeForGuaranteedOffer",
+            "value": "['A']",
+            "helptext": "H1 or H2 grade for guaranteed offer"
+        },
+        {
+            "description": "H1 or H2 Grade or \nBetter For Guaranteed Offer",
+            "nodeName": "variable",
+            "id": "163090658606255.8695300292132",
+            "x": 690,
+            "y": 50,
+            "name": "H1OrH2GradeOrBetterForGuaranteedOffer",
+            "value": "['A','B','C']",
+            "helptext": "H1 or H2 grade or better for guaranteed offer"
+        },
+        {
+            "description": "UAS Value For\nA Level",
+            "nodeName": "variable",
+            "id": "163090658749579.36356333494743",
+            "x": 840,
+            "y": 50,
+            "name": "UASValueForALevel",
+            "value": "4",
+            "helptext": "UAS value for A level"
+        },
+        {
+            "description": "Points For IB Level",
+            "nodeName": "variable",
+            "id": "163090659742792.03636272318553",
+            "x": 540,
+            "y": 210,
+            "name": "PointsForIBLevel",
+            "value": "4",
+            "helptext": "Points for IB Level"
+        },
+        {
+            "description": "Points Cutoff For\nIB Level",
+            "nodeName": "variable",
+            "id": "163090660355592.13385337125206",
+            "x": 690,
+            "y": 210,
+            "name": "PointsCutoffForIBLevel",
+            "value": "4",
+            "helptext": "Points cutoff for IB level"
+        },
+        {
+            "description": "CAP Cutoff For\nNUS HS",
+            "nodeName": "variable",
+            "id": "163090660873930.782750926650436",
+            "x": 840,
+            "y": 210,
+            "name": "CAPCutoffForNUSHS",
+            "value": "3",
+            "helptext": "CAP cutoff for NUS HS"
+        }
+    ],
+    "outputs": [
+        {
+            "description": "Student Output",
+            "nodeName": "output",
+            "id": "163090653662331.630809081061017",
+            "x": 260,
+            "y": 220,
+            "output": "Student",
+            "name": "Student"
+        }
+    ],
+    "objects": [
+        {
+            "description": "Student - Test",
+            "nodeName": "object",
+            "name": "Student",
+            "id": "16309070727746.998447560450716",
+            "x": 90,
+            "y": 440,
+            "data": "csv://Name,AdmissionNum,Nationality,Qualification,CoreSubject,CoreSubjectGrade,H1Subjects,H1SubjectGrades,H2Subjects,H2SubjectGrades,H3Subjects,H3SubjectGrades,GradeType,Grade\r\nStudent A,48298492,China,A,AL00001,D,H100001,B,H200001,A,H300001,A,CAP,4\r\n,,,,,,H100002,A,H200002,A,H300002,A,,\r\n,,,,,,,,H200003,A,H300003,A,,\r\n,,,,,,,,H200004,B,,,,",
+            "data_raw": "Name,AdmissionNum,Nationality,Qualification,CoreSubject,CoreSubjectGrade,H1Subjects,H1SubjectGrades,H2Subjects,H2SubjectGrades,H3Subjects,H3SubjectGrades,GradeType,Grade\r\nStudent A,48298492,China,A,AL00001,D,H100001,B,H200001,A,H300001,A,CAP,4\r\n,,,,,,H100002,A,H200002,A,H300002,A,,\r\n,,,,,,,,H200003,A,H300003,A,,\r\n,,,,,,,,H200004,B,,,,",
+            "type": "CSV"
+        }
+    ],
+    "simulations": [
+        {
+            "description": "Simulate - Test Student",
+            "nodeName": "simulate",
+            "id": "163090714870531.930553662050066",
+            "x": 260,
+            "y": 440,
+            "allTestObjects": "[]",
+            "doTestWithObjects": "[{\"id\":\"16309070727746.998447560450716\",\"img\":\"http://localhost:8080/apps/monastery/views/monkruls-designer/dialogs/object.svg\",\"label\":\"Student - Test\"}]"
+        }
+    ]
+}

@@ -10,21 +10,27 @@ exports.doService = async jsonReq => {
 	
 	LOG.debug("Admin request for package: " + jsonReq.name);
 
-    const pubpath = `${APP_CONSTANTS.MONKRULS.APP_ROOT}/${CONF.pubpath}/${jsonReq.name}.${APP_CONSTANTS.MONKRULS.MONKRULS_EXTENSION}`;
+    const pubpath = `${APP_CONSTANTS.MONKRULS.APP_ROOT}/${CONF.pubpath}`;
+    const pubpathFile = `${pubpath}/${jsonReq.name}.${APP_CONSTANTS.MONKRULS.MONKRULS_EXTENSION}`;
 
     try {
         if ((jsonReq.op.toLowerCase() == "update") || (jsonReq.op.toLowerCase() == "add")) {
-            await fspromises.writeFile(pubpath, JSON.stringify(jsonReq.input, null, 4), "utf8");
+            await fspromises.writeFile(pubpathFile, JSON.stringify(jsonReq.input, null, 4), "utf8");
             LOG.info(`Published or updated a new rules package ${jsonReq.name}`);
             return CONSTANTS.TRUE_RESULT;
         } else if (jsonReq.op.toLowerCase() == "delete") {
-            await fspromises.unlink(pubpath);
+            await fspromises.unlink(pubpathFile);
             LOG.info(`Deleted rules package ${jsonReq.name}`);
             return CONSTANTS.TRUE_RESULT;
         } else if (jsonReq.op.toLowerCase() == "read") {
-            const data = JSON.parse(await fspromises.readFile(pubpath, "utf8"));
+            const data = JSON.parse(await fspromises.readFile(pubpathFile, "utf8"));
             LOG.info(`Read back rules package ${jsonReq.name}`);
             return {result: true, data};
+        } else if (jsonReq.op.toLowerCase() == "list") {
+            const entries = await fspromises.readdir(pubpath);
+            const list = []; for (const entry of entries) if (entry.endsWith(MONKRULS_EXTENSION)) list.push(entry.substring(0, `.${MONKRULS_EXTENSION}`.length));
+            LOG.info(`Sending back rules package list ${list}`);
+            return {result: true, list};
         }
     } catch (err) {
         LOG.error(`Error running op ${jsonReq.op}, on rules package ${jsonReq.name}, error is ${err}`);
