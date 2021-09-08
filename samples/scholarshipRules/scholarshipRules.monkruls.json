@@ -29,9 +29,9 @@
     ],
     "data": [
         {
-            "description": "Country Table",
+            "description": "Country \nTable",
             "nodeName": "data",
-            "name": "Country",
+            "name": "Country ",
             "id": "163090449112639.080709830878455",
             "data": "csv://A,B\r\nBrunei,China\r\nCambodia,India\r\nIndonesia,\r\nLaos,\r\nMalaysia,\r\nMyanmar,\r\nPhilippines,\r\nThailand,\r\nVietnam,",
             "data_raw": "[\n    {\n        \"type\": \"tab\",\n        \"__org_monkshu_components_spreadsheet_rows\": \"15\",\n        \"__org_monkshu_components_spreadsheet_columns\": \"5\",\n        \"data\": \"A,B\\r\\nBrunei,China\\r\\nCambodia,India\\r\\nIndonesia,\\r\\nLaos,\\r\\nMalaysia,\\r\\nMyanmar,\\r\\nPhilippines,\\r\\nThailand,\\r\\nVietnam,\",\n        \"name\": \"default\",\n        \"id\": \"default\"\n    },\n    {\n        \"type\": \"plugin\",\n        \"id\": \"isLookupTable\",\n        \"data\": \"on\"\n    }\n]",
@@ -115,7 +115,7 @@
     ],
     "objects": [
         {
-            "description": "Student - Test",
+            "description": "Student - \nTest",
             "nodeName": "object",
             "name": "Student",
             "id": "16309070727746.998447560450716",
@@ -126,7 +126,7 @@
             "type": "CSV"
         },
         {
-            "description": "Student - Test as JSON",
+            "description": "Student - \nTest as JSON",
             "nodeName": "object",
             "name": "Student",
             "id": "163099384288997.10929535602477",
